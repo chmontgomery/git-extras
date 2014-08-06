@@ -336,7 +336,7 @@ original        git@github.com:LearnBoost/expect.js (push)
 ```
 
 
-## git-release
+## git-release <tagname> [remote-url]
 
 Release commit with the given &lt;tag&gt;:
 
@@ -346,11 +346,11 @@ $ git release 0.1.0
 
 Does the following:
 
-  - Executes _.git/hooks/pre-release.sh_ (if present)
+  - Executes _.git/hooks/pre-release.sh_ (if present), passing it the given arguments
   - Commits changes (to changelog etc) with message "Release &lt;tag&gt;"
   - Tags with the given &lt;tag&gt;
   - Push the branch / tags
-  - Executes _.git/hooks/post-release.sh_ (if present)
+  - Executes _.git/hooks/post-release.sh_ (if present), passing it the given arguments
 
 ## git-alias
 
