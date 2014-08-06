@@ -11,8 +11,8 @@ hook() {
 if test $# -gt 0; then
   hook pre-release "$@"
   echo "... releasing $1 to $2"
-  git commit -a -m "Release $1"
-  git tag $1 -a -m "Release $1" \
+  npm version "$1"
+  git tag $1 -a -m "$1" \
     && git push $2 \
     && git push $2 --tags \
     && hook post-release "$@" \
